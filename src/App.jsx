@@ -6,7 +6,7 @@ import DefaultLayout from './layouts/DefaultLayout.jsx'
 
 import HomePage from './pages/HomePage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
-import MovieDetails from './pages/MovieDetails.jsx';
+import MovieDetails from './pages/MovieDetails.jsx'
 
 function App() {
 
