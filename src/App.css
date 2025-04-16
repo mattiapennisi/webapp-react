@@ -16,6 +16,11 @@ body {
     width: 100%;
     min-height: 70vh;
     flex: 1 0 auto;
+
+    .card {
+        max-height: 450px;
+        overflow: hidden;
+    }
 }
 
 /* Footer */
