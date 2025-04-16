@@ -16,8 +16,8 @@ export default function HomePage() {
                     {
                         isLoaded && movies.map((movie, index) => (
                             <div key={index} className="col">
-                                <Link to='/movies/:id'>
-                                    <div className="card p-3">
+                                <Link to={`/movies/${movie.id}`}>
+                                    <div className="card card-in-list p-3">
                                         <img className="card-img-top" src={`http://localhost:3000${movie.image}`} alt={`Movie ${movie.id}`} />
                                         <div className="card-body">
                                             <h4 className="card-title">{movie.title}</h4>

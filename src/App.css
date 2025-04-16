@@ -17,7 +17,7 @@ body {
     min-height: 70vh;
     flex: 1 0 auto;
 
-    .card {
+    .card-in-list {
         max-height: 500px;
         overflow: hidden;
 
