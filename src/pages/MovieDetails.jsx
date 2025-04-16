@@ -6,13 +6,12 @@ export default function MovieDetails() {
 
             <div className="row">
                 <div class="card p-5">
-                    <img class="card-img-top" src="" alt="Title" />
+                    <img class="card-img-top" src="placeholder" alt="Title" />
                     <div class="card-body">
                         <h4 class="card-title">Movie details</h4>
-                        <p class="card-text">Text</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam illum nam hic?</p>
                     </div>
                 </div>
-                
             </div>
         </div>
         </>
