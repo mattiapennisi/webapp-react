@@ -30,6 +30,13 @@ body {
             height: 300px;
         }
     }
+
+    .user-image {
+        height: 50px;
+        width: 50px;
+        margin-left: 12px;
+        margin-top: 10px;
+    }
 }
 
 /* Footer */
