@@ -45,9 +45,11 @@ export default function MovieDetails() {
                                     </div>
                                     <div className="col-md-8">
                                         <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                                            <h5 className="card-title mb-4">Director: {movieDetails.director}</h5>
+                                            <p className="card-text">Release year: {movieDetails.release_year}</p>
+                                            <p className="card-text">Genre: {movieDetails.genre}</p>
+                                            <p className="card-text">Overview: {movieDetails.abstract}</p>
+                                            <p className="card-text"><small className="text-body-secondary">Last update: {movieDetails.updated_at.substring(0, 10)}</small></p>
                                         </div>
                                     </div>
                                 </div>
