@@ -18,8 +18,17 @@ body {
     flex: 1 0 auto;
 
     .card {
-        max-height: 450px;
+        max-height: 500px;
         overflow: hidden;
+
+        &:hover {
+            transform: scale(1.01);
+            cursor: pointer;
+        }
+
+        img {
+            height: 300px;
+        }
     }
 }
 
