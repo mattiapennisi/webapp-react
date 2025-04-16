@@ -14,10 +14,10 @@ export default function HomePage() {
                         isLoaded && movies.map((movie, index) => (
                             <div key={index} className="col">
                                 <div className="card p-3">
-                                    <img className="card-img-top" src="placeholder" alt="Title" />
+                                    <img className="card-img-top" src={`http://localhost:3000${movie.image}`} alt={`Movie ${movie.id}`} />
                                     <div className="card-body">
                                         <h4 className="card-title">{movie.title}</h4>
-                                        <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste laborum mollitia quos</p>
+                                        <p className="card-text">{movie.abstract}</p>
                                     </div>
                                 </div>
                             </div>
