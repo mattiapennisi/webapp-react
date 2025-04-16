@@ -1,0 +1,25 @@
+/* Common */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+#header {
+    width: 100%;
+}
+
+/* Main */
+#main {
+    width: 100%;
+    min-height: 70vh;
+    flex: 1 0 auto;
+}
+
+/* Footer */
+#footer {
+    width: 100%;
+    margin-top: auto;
+}
