@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import { useDefaultState } from "../contexts/DefaultContext"
 import MovieReviewsForm from '../components/MovieReviewsForm'
@@ -16,7 +16,8 @@ export default function MovieDetails() {
         fetch(url, {
             method: 'GET',
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
             }
         })
             .then(res => res.json())
@@ -29,7 +30,7 @@ export default function MovieDetails() {
                 console.error(err)
                 setIsLoaded(true)
             })
-    }, [])
+    }, [movieDetails])
 
     return (
         <>
