@@ -2,18 +2,56 @@ import { useState } from 'react'
 
 export default function MovieReviewsForm({ movieId }) {
 
-    const url = `http://localhost:3000/${movieId}/reviews/`
+    const url = `http://localhost:3000/movies/${movieId}/reviews`
 
     const [formData, setFormData] = useState({
         name: '',
-        vote: 0,
-        text: ''
+        vote: '',
+        text: '',
     })
+    const [formErrors, setFormErrors] = useState({})
+
+    function isFormValid(data) {
+        const errors = {}
+
+        if (!data.name) errors.name = 'Username is required'
+        if (!data.vote) errors.vote = 'Vote is required'
+        if (!data.text) errors.text = 'Text is required'
+
+        setFormErrors(errors)
+        return Object.keys(errors).length === 0
+    }
 
     function handleFormSubmit(e) {
         e.preventDefault()
 
         console.log(formData)
+
+        if (!isFormValid(formData)) {
+            console.log('Form is not valid');
+            return
+        }
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setFormData({
+                name: '',
+                vote: '',
+                text: ''
+            })
+        })
+        .catch(err => {
+            console.error(err)
+        })
     }
 
     return (
