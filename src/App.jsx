@@ -8,13 +8,10 @@ import HomePage from './pages/HomePage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import MovieDetails from './pages/MovieDetails.jsx'
 
-import Loader from './components/Loader.jsx'
-
 function App() {
   return (
     <DefaultProvider>
       <BrowserRouter>
-        <Loader />
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<HomePage />} />

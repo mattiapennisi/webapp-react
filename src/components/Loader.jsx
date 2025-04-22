@@ -6,7 +6,7 @@ export default function Loader() {
     if (!isLoading) return null
 
     return (
-        <div className="global-loader">
+        <div className="global-loader d-flex justify-content-center align-items-center">
             <div className="spinner-border text-primary" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>

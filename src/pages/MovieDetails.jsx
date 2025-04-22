@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useDefaultState } from "../contexts/DefaultContext"
 import MovieReviewsForm from '../components/MovieReviewsForm'
@@ -7,10 +7,10 @@ import MovieReviewsForm from '../components/MovieReviewsForm'
 export default function MovieDetails() {
 
     const { id } = useParams()
-    const navigate = useNavigate()
     const url = `http://localhost:3000/movies/${id}`
     const [movieDetails, setMovieDetails] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
+    const { showLoader, hideLoader } = useDefaultState()
 
     useEffect(() => {
         fetch(url, {
