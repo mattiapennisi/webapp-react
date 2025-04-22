@@ -8,22 +8,22 @@ import HomePage from './pages/HomePage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import MovieDetails from './pages/MovieDetails.jsx'
 
-function App() {
+import Loader from './components/Loader.jsx'
 
+function App() {
   return (
-    <>
-      <DefaultProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<DefaultLayout />}>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/movies/:id' element={<MovieDetails />} />
-              <Route path='*' element={<NotFoundPage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </DefaultProvider>
-    </>
+    <DefaultProvider>
+      <BrowserRouter>
+        <Loader />
+        <Routes>
+          <Route path="/" element={<DefaultLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/movies/:id" element={<MovieDetails />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </DefaultProvider>
   )
 }
 

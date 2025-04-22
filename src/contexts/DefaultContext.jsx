@@ -3,12 +3,17 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const DefaultContext = createContext()
 
 function DefaultProvider({ children }) {
-
     const [movies, setMovies] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const url = 'http://localhost:3000/movies'
 
+    const showLoader = () => setIsLoading(true)
+    const hideLoader = () => setIsLoading(false)
+
     useEffect(() => {
+        showLoader()
+
         fetch(url, {
             method: 'GET',
             headers: {
@@ -20,10 +25,12 @@ function DefaultProvider({ children }) {
                 console.log(data)
                 setMovies(data)
                 setIsLoaded(true)
+                hideLoader()
             })
             .catch(err => {
                 console.error(err)
                 setIsLoaded(true)
+                hideLoader()
             })
     }, [])
 
@@ -32,7 +39,10 @@ function DefaultProvider({ children }) {
             value={{
                 movies,
                 setMovies,
-                isLoaded
+                isLoaded,
+                isLoading,
+                showLoader,
+                hideLoader
             }}
         >
             {children}
