@@ -30,7 +30,7 @@ export default function MovieDetails() {
                 console.error(err)
                 setIsLoaded(true)
             })
-    }, [movieDetails])
+    }, [])
 
     return (
         <>

@@ -66,8 +66,8 @@ export default function MovieReviewsForm({ movieId }) {
             <form className="d-flex gap-3" action="POST" onSubmit={handleFormSubmit}>
 
                 <input className='form-control' type="text" name="review-name" id="review-name" placeholder="Username" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
-                <select name="review-vote" id="review-vote" value={formData.vote} onChange={(e) => setFormData({ ...formData, vote: Number(e.target.value) })} required>
-                    <option value=" ">Choose your vote</option>
+                <select className='form-control' name="review-vote" id="review-vote" value={formData.vote} onChange={(e) => setFormData({ ...formData, vote: Number(e.target.value) })} required>
+                    <option value=" ">Enter your vote</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
