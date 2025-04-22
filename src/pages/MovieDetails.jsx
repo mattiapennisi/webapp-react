@@ -75,7 +75,7 @@ export default function MovieDetails() {
                             }
                         </div>
 
-                        <MovieReviewsForm />
+                        <MovieReviewsForm movieId={movieDetails.id} />
                     </div>
                 )
             }
