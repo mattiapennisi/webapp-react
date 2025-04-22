@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
 import { useDefaultState } from "../contexts/DefaultContext"
+import MovieReviewsForm from '../components/MovieReviewsForm'
 
 export default function MovieDetails() {
 
@@ -62,7 +63,7 @@ export default function MovieDetails() {
                                 isLoaded && movieDetails.reviews.map((review, index) => (
                                     <div key={index}>
                                         <div className="card p-3">
-                                            <img className="card-img-top user-image" src="img/Unknown_user.jpg" alt="User image" />
+                                            <img className="card-img-top user-image" src="/img/Unknown_user.jpg" alt="User image" />
                                             <div className="card-body">
                                                 <h4 className="card-title mb-3">{review.name}</h4>
                                                 <p className="card-text">Vote: {review.vote}</p>
@@ -73,6 +74,8 @@ export default function MovieDetails() {
                                 ))
                             }
                         </div>
+
+                        <MovieReviewsForm />
                     </div>
                 )
             }
